@@ -13,7 +13,7 @@ const AddPlaylist = (props: Props) => {
     const [creator, setCreator] = useState('');
     const [rating, setRating] = useState('');
 
-    const onFirstNaemChange = (e: any) => {
+    const onFirstNameChange = (e: any) => {
         setPlaylistName(e.target.value);
     };
 
@@ -48,7 +48,7 @@ const AddPlaylist = (props: Props) => {
                         <input
                             type='text'
                             value={playlistName}
-                            onChange={onFirstNaemChange}
+                            onChange={onFirstNameChange}
                         />
                     </div>
                     <div>

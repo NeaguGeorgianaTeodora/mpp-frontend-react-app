@@ -1,6 +1,6 @@
 import Playlists from './Playlists.tsx';
 import './Playlists.style.css';
-import {IPlaylist, PageEnum} from './Playlist.type.ts';
+import {exampleList, IPlaylist, PageEnum} from './Playlist.type.ts';
 import {useState} from 'react';
 import AddPlaylist from './AddPlaylist.tsx';
 import EditPlaylist from './EditPlaylist.tsx';
@@ -8,8 +8,9 @@ import ViewPlaylist from './ViewPlaylist.tsx';
 import {ISong} from './Song.type.tsx';
 
 const Home = () => {
-    const [playlists, setPlaylists] = useState([] as IPlaylist[]);
-    const [songs, setSongs] = useState([] as ISong[]);
+    //const [playlists, setPlaylists] = useState([] as IPlaylist[]);
+    const [playlists, setPlaylists] = useState(exampleList as IPlaylist[]);
+    const [songs] = useState([] as ISong[]);
     const [shownPage, setShownPage] = useState(PageEnum.list);
     const [dataToEdit, setDataToEdit] = useState({} as IPlaylist);
     const onAddPlaylistClick = () => {
@@ -51,12 +52,6 @@ const Home = () => {
     };
     return (
         <>
-            <article className='article-header'>
-                <header>
-                    <h1>Discover</h1>
-                </header>
-            </article>
-
             <section className='section-content'>
                 {shownPage === PageEnum.list && (
                     <>

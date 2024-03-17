@@ -1,9 +1,3 @@
-.article-header {
-    background-color: #646cff;
-    color: white;
-    text-align: center;
-}
-
 .section-content {
     color: white;
     margin-left: 10%;
@@ -14,4 +8,13 @@
 .add-playlist-btn {
     float: right;
     margin-top: 5px;
+    border-radius: 12px;
+    background-color: hsl(203, 92%, 75%, 0.5);
+    color: white;
+    border: none;
+    text-align: center;
+    padding-top: 5px;
+    padding-right: 15px;
+    padding-bottom: 10px;
+    padding-left: 15px;
 }

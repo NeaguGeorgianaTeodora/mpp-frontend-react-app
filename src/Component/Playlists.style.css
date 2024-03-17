@@ -1,15 +1,20 @@
+.article-header {
+    color: white;
+    text-align: left;
+    border-radius: 10px;
+}
+
 table {
     font-family: arial, sans-serif;
-    border-collapse: collapse;
     width: 100%;
 }
 
 td, th {
-    border: 1px solid #dddddd;
+
+    border: 1px solid white;
     text-align: left;
     padding: 8px;
+    border-radius: 10px;
+    background-color: hsl(0, 0%, 60%, 0.2);
 }
 
-tr:nth-child(even) {
-    background-color: #0E3386;
-}

@@ -11,6 +11,11 @@ const Playlists = (props: Props) => {
     const {list, onDeleteClick, onEditClick, onViewClick} = props;
     return (
         <div>
+            <article className='article-header'>
+                <header>
+                    <h1>Playlists</h1>
+                </header>
+            </article>
             <table>
                 <tr>
                     <th>Playlist Name</th>
