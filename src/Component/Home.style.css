@@ -1,0 +1,17 @@
+.article-header {
+    background-color: #646cff;
+    color: white;
+    text-align: center;
+}
+
+.section-content {
+    color: white;
+    margin-left: 10%;
+    margin-right: 10%;
+    margin-top: 15px;
+}
+
+.add-playlist-btn {
+    float: right;
+    margin-top: 5px;
+}
