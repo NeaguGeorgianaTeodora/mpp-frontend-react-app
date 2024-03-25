@@ -5,7 +5,9 @@ import {useState} from 'react';
 import AddPlaylist from './AddPlaylist.tsx';
 import EditPlaylist from './EditPlaylist.tsx';
 import ViewPlaylist from './ViewPlaylist.tsx';
+import BarChartStat from './Charts.tsx';
 import {ISong} from './Song.type.tsx';
+//import {useNavigate} from 'react-router-dom';
 
 const Home = () => {
     //const [playlists, setPlaylists] = useState([] as IPlaylist[]);
@@ -15,6 +17,12 @@ const Home = () => {
     const [dataToEdit, setDataToEdit] = useState({} as IPlaylist);
     const onAddPlaylistClick = () => {
         setShownPage(PageEnum.add);
+    };
+
+    const onSortPlaylistClick = () => {
+        const tempList = [...playlists];
+        const sortedList = tempList.sort((a, b) => (a.Name > b.Name ? 1 : -1));
+        _setPlaylists(sortedList);
     };
     const showListPage = () => {
         setShownPage(PageEnum.list);
@@ -50,6 +58,8 @@ const Home = () => {
         tempList[indexOfRecord] = data;
         _setPlaylists(tempList);
     };
+
+    //const navigate = useNavigate();
     return (
         <>
             <section className='section-content'>
@@ -67,6 +77,13 @@ const Home = () => {
                             onClick={onAddPlaylistClick}
                             className='add-playlist-btn'
                         />
+                        <input
+                            type='button'
+                            value='Sort By Name'
+                            onClick={onSortPlaylistClick}
+                            className='sort-playlist-btn'
+                        />
+                        <BarChartStat />
                     </>
                 )}
                 {shownPage === PageEnum.add && (

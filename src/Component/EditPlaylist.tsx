@@ -48,6 +48,7 @@ const EditPlaylist = (props: Props) => {
                     <div>
                         <label>Playlist Name: </label>
                         <input
+                            data-testid={'playlist_input'}
                             type='text'
                             value={playlistName}
                             onChange={onFirstNaemChange}
@@ -56,6 +57,7 @@ const EditPlaylist = (props: Props) => {
                     <div>
                         <label>Creator Name: </label>
                         <input
+                            data-testid={'creator_input'}
                             type='text'
                             value={creator}
                             onChange={onCreatorChange}
@@ -64,6 +66,7 @@ const EditPlaylist = (props: Props) => {
                     <div>
                         <label>Rating: </label>
                         <input
+                            data-testid={'rating_input'}
                             type='number'
                             min='0'
                             max='5'

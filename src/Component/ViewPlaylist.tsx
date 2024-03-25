@@ -1,4 +1,6 @@
 import {ISong} from './Song.type.tsx';
+//import Grid from 'react-grid-layout';
+import Grid from '@mui/material/Grid';
 
 type Props = {
     data: ISong[];
@@ -8,7 +10,7 @@ const ViewPlaylist = (props: Props) => {
     const {data, onBackBtnClick} = props;
     return (
         <>
-            <div>
+            <Grid container spacing={2}>
                 <table>
                     <tr>
                         <th>Title</th>
@@ -31,7 +33,7 @@ const ViewPlaylist = (props: Props) => {
                     />
                     <input type='submit' value='Add' />
                 </div>
-            </div>
+            </Grid>
         </>
     );
 };

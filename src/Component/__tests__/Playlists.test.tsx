@@ -1,4 +1,5 @@
 import {fireEvent, render} from '@testing-library/react';
+import {describe, it, vi} from 'vitest';
 import Playlists from '../Playlists';
 
 describe('Playlists', () => {
@@ -40,9 +41,9 @@ describe('Playlists', () => {
     });
 
     it('calls correct functions when action buttons are clicked', () => {
-        const onDeleteClickMock = jest.fn();
-        const onEditClickMock = jest.fn();
-        const onViewClickMock = jest.fn();
+        const onDeleteClickMock = vi.fn();
+        const onEditClickMock = vi.fn();
+        const onViewClickMock = vi.fn();
 
         const {getAllByRole} = render(
             <Playlists

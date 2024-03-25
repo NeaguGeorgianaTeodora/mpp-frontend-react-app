@@ -20,7 +20,7 @@ export const exampleList: IPlaylist[] = [
     },
     {
         Id: 1,
-        Name: 'P2',
+        Name: 'AP2',
         CreatorName: 'Alex',
         SongsNumber: 10,
         Rating: 4,
@@ -28,7 +28,7 @@ export const exampleList: IPlaylist[] = [
     },
     {
         Id: 2,
-        Name: 'P3',
+        Name: 'BP3',
         CreatorName: 'Andra',
         SongsNumber: 20,
         Rating: 3,

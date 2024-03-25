@@ -1,11 +1,12 @@
-import {fireEvent, render} from '@testing-library/react';
+import {fireEvent, render, screen} from '@testing-library/react';
+import {describe, it, vi} from 'vitest';
 import AddPlaylist from '../AddPlaylist';
 
 describe('AddPlaylist', () => {
     it('calls onSubmitClick with correct data when form is submitted', () => {
-        const onSubmitClickMock = jest.fn();
+        const onSubmitClickMock = vi.fn();
         const mockFormData = {
-            Id: 0,
+            Id: 1,
             Name: 'Test Playlist',
             CreatorName: 'Test Creator',
             Rating: 4,
@@ -13,22 +14,22 @@ describe('AddPlaylist', () => {
             SongsNumber: 0,
         };
 
-        const {getByLabelText, getByText} = render(
+        const {getByText} = render(
             <AddPlaylist
                 onBackBtnClick={() => {}}
                 onSubmitClick={onSubmitClickMock}
             />,
         );
 
-        fireEvent.change(getByLabelText('Playlist Name: '), {
+        fireEvent.change(screen.getByTestId('playlist_input'), {
             target: {value: mockFormData.Name},
         });
 
-        fireEvent.change(getByLabelText('Creator Name: '), {
+        fireEvent.change(screen.getByTestId('creator_input'), {
             target: {value: mockFormData.CreatorName},
         });
 
-        fireEvent.change(getByLabelText('Rating: '), {
+        fireEvent.change(screen.getByTestId('rating_input'), {
             target: {value: mockFormData.Rating},
         });
 
@@ -38,7 +39,7 @@ describe('AddPlaylist', () => {
     });
 
     it('calls onBackBtnClick when Back button is clicked', () => {
-        const onBackBtnClickMock = jest.fn();
+        const onBackBtnClickMock = vi.fn();
         const {getByText} = render(
             <AddPlaylist
                 onBackBtnClick={onBackBtnClickMock}

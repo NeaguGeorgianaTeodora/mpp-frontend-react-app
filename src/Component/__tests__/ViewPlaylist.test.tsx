@@ -1,4 +1,5 @@
 import {fireEvent, render} from '@testing-library/react';
+import {describe, it, vi} from 'vitest';
 import ViewPlaylist from '../ViewPlaylist.tsx';
 
 const mockSongs = [
@@ -8,7 +9,7 @@ const mockSongs = [
 
 describe('ViewPlaylist', () => {
     it('calls onBackBtnClick when Back button is clicked', () => {
-        const onBackBtnClickMock = jest.fn();
+        const onBackBtnClickMock = vi.fn();
         const {getByText} = render(
             <ViewPlaylist
                 data={mockSongs}

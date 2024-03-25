@@ -1,4 +1,5 @@
-import {fireEvent, render} from '@testing-library/react';
+import {fireEvent, render, screen} from '@testing-library/react';
+import {describe, it, vi} from 'vitest';
 import EditPlaylist from '../EditPlaylist';
 
 describe('EditPlaylist', () => {
@@ -12,10 +13,10 @@ describe('EditPlaylist', () => {
     };
 
     it('updates playlist data and calls onUpdateBtnClick when form is submitted', () => {
-        const onUpdateBtnClickMock = jest.fn();
-        const onBackBtnClickMock = jest.fn();
+        const onUpdateBtnClickMock = vi.fn();
+        const onBackBtnClickMock = vi.fn();
 
-        const {getByLabelText, getByText} = render(
+        const {getByText} = render(
             <EditPlaylist
                 data={mockPlaylist}
                 onBackBtnClick={onBackBtnClickMock}
@@ -30,15 +31,15 @@ describe('EditPlaylist', () => {
             Rating: 5,
         };
 
-        fireEvent.change(getByLabelText('Playlist Name: '), {
+        fireEvent.change(screen.getByTestId('playlist_input'), {
             target: {value: updatedPlaylistData.Name},
         });
 
-        fireEvent.change(getByLabelText('Creator Name: '), {
+        fireEvent.change(screen.getByTestId('creator_input'), {
             target: {value: updatedPlaylistData.CreatorName},
         });
 
-        fireEvent.change(getByLabelText('Rating: '), {
+        fireEvent.change(screen.getByTestId('rating_input'), {
             target: {value: updatedPlaylistData.Rating},
         });
 
